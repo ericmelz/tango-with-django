@@ -75,11 +75,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media'
+                # TODO commenting because this seems to cause troubles (e.g., stacktrace when visiting /admin/)
+                # 'django.template.context_processors.media'
             ],
         },
     },
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]\
+    # TODO commenting because this seems to cause troubles (e.g., stacktrace when visiting /admin/)
+            # + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 WSGI_APPLICATION = 'tango_with_django_project.wsgi.application'
 
